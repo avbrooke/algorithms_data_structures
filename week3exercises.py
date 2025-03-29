@@ -48,20 +48,19 @@
 
 # Solution 3:
 
-# def is_valid_password(password):
-#     if has_upper and has_lower and has_digit and min_length:
-#         return True
-#     else:
-#         return False
+def is_valid_password(password):
+    min_length = len(password) >= 8
+    has_upper = any(char.isupper() for char in password)
+    has_lower = any(char.islower() for char in password)
+    has_digit = any(char.isdigit() for char in password)
+    if has_upper and has_lower and has_digit and min_length:
+        return True
+    else:
+        return False
 #
 # input_password = str(input("Please enter your password: "))
-# min_length = len(input_password) >= 8
-# has_upper = any(char.isupper() for char in input_password)
-# has_lower = any(char.islower() for char in input_password)
-# has_digit = any(char.isdigit() for char in input_password)
 # print(is_valid_password(input_password))
 
-# TODO: write tests for solution 3
 
 # Write a function sum_digits(number) to calculate and return the sum of the digits of a
 # given whole number (an int NOT a string) given as a parameter.
@@ -79,23 +78,19 @@
 # have different lengths, the output should be padded with 0s on the right-hand side to match the
 # length of the longest string. Examples are given in the table below.
 # Solution 5:
-# def pairwise_digits(number_a, number_b):
-#     maximum = max(len(number_a), (len(number_b)))
-#     a = number_a.ljust(maximum, "0")
-#     b = number_b.ljust(maximum, "0")
-#     result = []
+def pairwise_digits(number_a, number_b):
+    maximum = max(len(number_a), (len(number_b)))
+    a = number_a.ljust(maximum, "0")
+    b = number_b.ljust(maximum, "0")
+    result = []
+
+    for num in range (maximum):
+        if a[num] == b[num]:
+            result.append(1)
+        else:
+            result.append(0)
+    return str(result)
 #
-#     for num in range (maximum):
-#         if a[num] == b[num]:
-#             result.append(1)
-#         else:
-#             result.append(0)
-#     return str(result)
-
-
-
-
-
-a_input = str(input("Please enter a whole number: "))
-b_input = str(input("Please enter a second whole number: "))
-print(pairwise_digits(a_input, b_input))
+# a_input = str(input("Please enter a whole number: "))
+# b_input = str(input("Please enter a second whole number: "))
+# print(pairwise_digits(a_input, b_input))
