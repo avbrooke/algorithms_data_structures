@@ -78,8 +78,24 @@
 # character 1 is used if the digits at the same index are the same, a 0 otherwise. If the two strings
 # have different lengths, the output should be padded with 0s on the right-hand side to match the
 # length of the longest string. Examples are given in the table below.
+# Solution 5:
+# def pairwise_digits(number_a, number_b):
+#     maximum = max(len(number_a), (len(number_b)))
+#     a = number_a.ljust(maximum, "0")
+#     b = number_b.ljust(maximum, "0")
+#     result = []
+#
+#     for num in range (maximum):
+#         if a[num] == b[num]:
+#             result.append(1)
+#         else:
+#             result.append(0)
+#     return str(result)
 
-def pairwise_digits(number_a, number_b): # TODO: convert to a list and compare index?
+
+
+
 
 a_input = str(input("Please enter a whole number: "))
 b_input = str(input("Please enter a second whole number: "))
+print(pairwise_digits(a_input, b_input))
