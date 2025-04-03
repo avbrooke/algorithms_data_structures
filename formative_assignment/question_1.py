@@ -14,3 +14,47 @@
 # • if the parameter text is an empty string, the function returns an empty string.
 
 def extract_text(text, keys):
+    text = text.lower()
+    keys = keys.lower()
+    for i in text:
+        str_arr = list(i)
+        for k in keys:
+            if k in str_arr:
+                print(i)
+
+# TODO: returning correct chars that are present in keys, need to find a way to return it as strings of words present.
+
+    # keys = keys.lower
+    # has_upper = any(t.isupper() for t in text)
+    # text_list = text.split()
+    # print(text_list)
+    # result = []
+
+    # for text_list in text:
+        # print(text_list)
+        #
+        # if any((t in text) for i in keys):
+        #     result.append(t)
+        #     return result
+
+
+    # if any((i in text) for i in keys):
+    #     result.append(text)
+    #     return print(result)
+    # else:
+    #     return None
+
+
+    # if text == "":
+    #     return ""
+    # else:
+    #     if any((t in keys) for t in text):
+    #         print('Found')
+    #
+    #     else:
+    #         print('Not Found')
+
+
+
+data = "The term conda is not recognised as the name of a"
+print(extract_text(data, "theAsORin"))
