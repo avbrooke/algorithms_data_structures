@@ -72,14 +72,3 @@ class Vector:
             if not math.isclose(a, b, abs_tol = 1e-9):
                 return True
         return False
-
-
-
-# vector1 = Vector([1.0, 2.0, 3.0])
-# vector2 = Vector([1.0, 2.0, 3.0])
-# vector1 *= 3
-# print(vector1)
-
-# my_vector = Vector([1.0, 2.1, 3.2])
-# print(my_vector)
-# my_vector.scalar_product(3)
