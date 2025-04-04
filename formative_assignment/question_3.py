@@ -1,4 +1,3 @@
-# Q3 solution
 class PouleSheet:
     def __init__(self, number, size):
         self._number = number
