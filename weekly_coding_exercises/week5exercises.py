@@ -1,4 +1,4 @@
-
+# exercise 1
 def ispalindrome(word):
     """Function checking if the text without spaces and punctuation is a palindrome.
 
@@ -25,7 +25,7 @@ def ispalindrome(word):
     # by removing the first and last characters
     return ispalindrome(word[1:-1])
 
-
+# exercise 2
 def rec_sum(numbers):
     # Base case: if the list is empty, the sum is 0
     if numbers == []:
@@ -34,7 +34,7 @@ def rec_sum(numbers):
     # numbers in the list
     return numbers[0] + rec_sum(numbers[1:])
 
-
+# exercise 3
 def sum_digits(number):
     # Recursive case: if the number is negative, call the function with
     # the positive number
@@ -51,7 +51,7 @@ def sum_digits(number):
     # Recursive case: add the last digit to the sum of the preceding digits
     return digit + sum_digits(quotient)
 
-
+# exercise 4
 def flatten(mlist):
     # Base case: if the list is empty, the result is an empty list
     if mlist == []:
@@ -67,7 +67,7 @@ def flatten(mlist):
         return flatten(mlist[0]) + flatten(mlist[1:])
     return [mlist]
 
-
+# exercise 5
 def merge(sorted_listA, sorted_listB):
     # Base case: if one of the lists is empty, return a copy of the other list
     if sorted_listA == []:
@@ -89,6 +89,7 @@ def merge(sorted_listA, sorted_listB):
     # list.
     return [sorted_listB[0]] + merge(sorted_listA, sorted_listB[1:])
 
+# exercise 6
 def iselfish(word):
     def _iselfish_helper(word, pattern):
         # Base case: if the pattern is empty, the word is elfish
