@@ -18,6 +18,3 @@ def get_words_indices(text):
             indices[word] = [word_start]
 
     return indices
-
-sampleText = "We can only see a short distance ahead" + " but we can see plenty there that needs" + " to be done"
-print(get_words_indices(sampleText))
