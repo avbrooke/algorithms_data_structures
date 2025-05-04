@@ -30,5 +30,3 @@ def molecule_to_list(molecule):
         raise ValueError()
 
     return result
-
-print(molecule_to_list("C6H12O6"))
