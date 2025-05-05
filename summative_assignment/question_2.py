@@ -3,8 +3,17 @@ import re
 def molecule_to_list(molecule):
     """
     Converts a molecular formula string into a list of (atom, count) tuples.
-    :param molecule: (str) a string representing a chemical formula.
-    :return: a list of tuples, where each tuple contains an atom symbol (str) and its count (int).
+    Args:
+        molecule (str): A string representing a chemical formula.
+    Returns:
+        list: A list of tuples where each tuple contains an atom symbol (str) and its count (int).
+    Raises:
+        ValueError: If the molecule:
+            - Doesn't start with an uppercase letter.
+            - Contains non-alphanumeric characters.
+            - Contains an invalid atom symbol (e.g. 'ca' instead of 'Ca').
+            - Contains tokens not matching the original input.
+            - Leaves characters unprocessed.
     """
     if not molecule or not molecule[0].isupper(): # Check if molecule is an empty string or does not start with an uppercase letter
         raise ValueError("Molecule should start with an uppercase letter.")
@@ -12,13 +21,14 @@ def molecule_to_list(molecule):
     if not molecule.isalnum(): # Check if molecule only contains alphanumeric chars
         raise ValueError("Molecule should only contain alphanumeric characters.")
 
-    pattern = r'([A-Z][a-z]?)(\d*)' # Regular expression pattern to extract atoms and counts
+    # Regular expression pattern to extract atoms and counts
+    pattern = r'([A-Z][a-z]?)(\d*)'
     tokens = re.findall(pattern, molecule)
 
     result = []
     idx = 0 # Track position in original molecule string
 
-    for atom, count_string in tokens: # Check atom structure is valid
+    for atom, count_string in tokens: # Check atom format is valid
         if not atom[0].isupper() or (len(atom)) == 2 and not atom[1].islower():
             raise ValueError("Atom format is not valid")
 
@@ -34,6 +44,6 @@ def molecule_to_list(molecule):
 
     # Check all characters in input were processed
     if idx != len(molecule):
-        raise ValueError("Characters to be processed remain in the molecule string")
+        raise ValueError("Extra characters remain in the molecule string")
 
     return result
