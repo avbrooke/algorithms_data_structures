@@ -15,7 +15,7 @@ def molecule_to_list(molecule):
             - Contains tokens not matching the original input.
             - Leaves characters unprocessed.
     """
-    if not molecule or not molecule[0].isupper(): # Check if molecule is an empty string or does not start with an uppercase letter
+    if not molecule or not molecule[0].isupper(): # Check molecule isn't empty string or doesn't start with lowercase
         raise ValueError("Molecule should start with an uppercase letter.")
 
     if not molecule.isalnum(): # Check if molecule only contains alphanumeric chars
