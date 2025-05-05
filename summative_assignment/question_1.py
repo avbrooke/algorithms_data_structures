@@ -5,13 +5,14 @@ def data_smoothing(data, size):
         data (list of float): The time series data to be smoothed.
         size (int): The size of the smoothing filter.
     Returns:
-        list: A list in which each element is the smoothed value at that index, or None if there is insufficient data to calculate average.
+        list: A list in which each element is the smoothed value at that index, or None if there is
+        insufficient data to calculate average.
     Raises:
         ValueError: If size is less than 1 or greater than the length of the data.
     """
     # Check that size is within the valid range
     if size < 1 or size > len(data):
-        raise ValueError("Invalid size: must be greater than or equal to 1, and less than or equal to length of data ")
+        raise ValueError("Invalid size: must be greater than or equal to 1, and less than or equal to length of data.")
 
     smoothed_data = [] # Empty list to store smoothed output
 
