@@ -1,12 +1,15 @@
 def data_smoothing(data, size):
     """
     Applies moving average smoothing to a time series using specified filter size.
+
     Args:
         data (list of float): The time series data to be smoothed.
         size (int): The size of the smoothing filter.
+
     Returns:
         list: A list in which each element is the smoothed value at that index, or None if there is
         insufficient data to calculate average.
+
     Raises:
         ValueError: If size is less than 1 or greater than the length of the data.
     """

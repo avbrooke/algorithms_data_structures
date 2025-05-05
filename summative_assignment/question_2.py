@@ -3,10 +3,13 @@ import re
 def molecule_to_list(molecule):
     """
     Converts a molecular formula string into a list of (atom, count) tuples.
+
     Args:
         molecule (str): A string representing a chemical formula.
+
     Returns:
         list: A list of tuples where each tuple contains an atom symbol (str) and its count (int).
+
     Raises:
         ValueError: If the molecule:
             - Doesn't start with an uppercase letter.
