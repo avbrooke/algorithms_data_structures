@@ -17,7 +17,7 @@ def get_words_indices(text):
 
     while idx < len(text):
         if text[idx] == " ":
-            idx +=1
+            idx +=1 # Skip whitespaces
             continue
 
         word_start = idx
